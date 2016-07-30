@@ -1,29 +1,30 @@
-﻿@model Vidly.ViewModels. RandomMovieViewModel
-@{
-    ViewBag.Title = "Index";
-    Layout = "~/Views/Shared/_Layout.cshtml";
-}
-
-<table class="table table-bordered table-hover">
-
-    <tr>
-        <th>Customers</th>
-    </tr>
-
-    @if(Model.Customers.Count() == 0)
-    {
-    <tr>
-        <td>No Customers to Display</td>
-    </tr>
-    }
-    else
-    {
-    foreach (var customer in Model.Customers)
-    {
-    <tr>
-        <td>@Html.ActionLink(@customer.Name, "Details", "Customers", new { Id = @customer.Id, Name = @customer.Name }, null)</td>
-    </tr>
-    }
-    }
-
-</table>
+﻿@model IEnumerable<Vidly.Models.Customer>
+        @{
+        ViewBag.Title = "Customers";
+        Layout = "~/Views/Shared/_Layout.cshtml";
+        }
+        <h2>Customers</h2>
+        @if (!Model.Any())
+        {
+        <p>We don't have any customers yet.</p>
+        }
+        else
+        {
+        <table class="table table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th>Customer</th>
+                    <th>Discount</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var customer in Model)
+                {
+                <tr>
+                    <td>@Html.ActionLink(customer.Name, "Details", "Customers", new { id = customer.Id }, null)</td>
+                    <td>@customer.MembershipType.MembershipTypeName</td>
+                </tr>
+                }
+            </tbody>
+        </table>
+        }

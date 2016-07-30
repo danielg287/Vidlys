@@ -175,10 +175,56 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201607292350153_InitialModel.cs" />
+    <Compile Include="Migrations\201607292350153_InitialModel.Designer.cs">
+      <DependentUpon>201607292350153_InitialModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201607300010106_AddIsSubscribedToCustomer.cs" />
+    <Compile Include="Migrations\201607300010106_AddIsSubscribedToCustomer.Designer.cs">
+      <DependentUpon>201607300010106_AddIsSubscribedToCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201607300021354_AddMembershipType.cs" />
+    <Compile Include="Migrations\201607300021354_AddMembershipType.Designer.cs">
+      <DependentUpon>201607300021354_AddMembershipType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201607300428257_PopulateMembershipTypes.cs" />
+    <Compile Include="Migrations\201607300428257_PopulateMembershipTypes.Designer.cs">
+      <DependentUpon>201607300428257_PopulateMembershipTypes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201607300439096_ApplyAnnotationsToCustomerName.cs" />
+    <Compile Include="Migrations\201607300439096_ApplyAnnotationsToCustomerName.Designer.cs">
+      <DependentUpon>201607300439096_ApplyAnnotationsToCustomerName.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201607300515001_Add MembershipTypeNameToMembershipType.cs" />
+    <Compile Include="Migrations\201607300515001_Add MembershipTypeNameToMembershipType.Designer.cs">
+      <DependentUpon>201607300515001_Add MembershipTypeNameToMembershipType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201607300516240_UpdateMembershipTypeNameValues.cs" />
+    <Compile Include="Migrations\201607300516240_UpdateMembershipTypeNameValues.Designer.cs">
+      <DependentUpon>201607300516240_UpdateMembershipTypeNameValues.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201607300552457_AddBirthdayToCustomer.cs" />
+    <Compile Include="Migrations\201607300552457_AddBirthdayToCustomer.Designer.cs">
+      <DependentUpon>201607300552457_AddBirthdayToCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201607300553409_AddBirthdayValuesToCustomer.cs" />
+    <Compile Include="Migrations\201607300553409_AddBirthdayValuesToCustomer.Designer.cs">
+      <DependentUpon>201607300553409_AddBirthdayValuesToCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201607300604077_SetCustomerBirthdayNullable.cs" />
+    <Compile Include="Migrations\201607300604077_SetCustomerBirthdayNullable.Designer.cs">
+      <DependentUpon>201607300604077_SetCustomerBirthdayNullable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201607300606390_RemoveBirthdayFromCustomer2.cs" />
+    <Compile Include="Migrations\201607300606390_RemoveBirthdayFromCustomer2.Designer.cs">
+      <DependentUpon>201607300606390_RemoveBirthdayFromCustomer2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\MembershipType.cs" />
     <Compile Include="Models\Movie.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -247,6 +293,7 @@
     <Content Include="Views\Movies\Details.cshtml" />
     <Content Include="Views\Customers\Index.cshtml" />
     <Content Include="Views\Customers\Details.cshtml" />
+    <Content Include="Views\Movies\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -258,6 +305,41 @@
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201607292350153_InitialModel.resx">
+      <DependentUpon>201607292350153_InitialModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201607300010106_AddIsSubscribedToCustomer.resx">
+      <DependentUpon>201607300010106_AddIsSubscribedToCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201607300021354_AddMembershipType.resx">
+      <DependentUpon>201607300021354_AddMembershipType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201607300428257_PopulateMembershipTypes.resx">
+      <DependentUpon>201607300428257_PopulateMembershipTypes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201607300439096_ApplyAnnotationsToCustomerName.resx">
+      <DependentUpon>201607300439096_ApplyAnnotationsToCustomerName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201607300515001_Add MembershipTypeNameToMembershipType.resx">
+      <DependentUpon>201607300515001_Add MembershipTypeNameToMembershipType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201607300516240_UpdateMembershipTypeNameValues.resx">
+      <DependentUpon>201607300516240_UpdateMembershipTypeNameValues.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201607300552457_AddBirthdayToCustomer.resx">
+      <DependentUpon>201607300552457_AddBirthdayToCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201607300553409_AddBirthdayValuesToCustomer.resx">
+      <DependentUpon>201607300553409_AddBirthdayValuesToCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201607300604077_SetCustomerBirthdayNullable.resx">
+      <DependentUpon>201607300604077_SetCustomerBirthdayNullable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201607300606390_RemoveBirthdayFromCustomer2.resx">
+      <DependentUpon>201607300606390_RemoveBirthdayFromCustomer2.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
