@@ -53,6 +53,7 @@ namespace Vidly.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = RoleName.CanChangeMovies)]
         public ActionResult Save(Movie movie)
         {
             if(!ModelState.IsValid)
@@ -84,6 +85,7 @@ namespace Vidly.Controllers
             return RedirectToAction("Index", "Movies");
         }
 
+        [Authorize(Roles = RoleName.CanChangeMovies)]
         public ActionResult Edit(int id)
         {
             var currentMovie = _context.Movie.SingleOrDefault(m => m.Id == id);
@@ -96,6 +98,7 @@ namespace Vidly.Controllers
             return View("MovieForm", viewModel);
         }
 
+        [Authorize(Roles = RoleName.CanChangeMovies)]
         public ActionResult Delete(int id)
         {
             var movie = _context.Movie.Single(m => m.Id == id);
@@ -106,23 +109,5 @@ namespace Vidly.Controllers
             return RedirectToAction("Index", "Movies");
         }
 
-        // GET: Movies/Random
-        public ActionResult Random()
-        {
-            var movie = new Movie() { Name = "Shrek!" };
-            var customers = new List<Customer>
-            {
-                new Customer { Name = "Customer 1" },
-                new Customer { Name = "Customer 2" }
-            };
-
-            var viewModel = new RandomMovieViewModel
-            {
-                Movie = movie,
-                Customers = customers
-            };
-
-            return View(viewModel);
-        }
     }
 }
